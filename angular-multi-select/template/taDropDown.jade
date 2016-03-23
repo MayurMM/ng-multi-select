@@ -1,0 +1,24 @@
+.multi-box
+    .multi-box-header
+        label.control-label {{taLabel}}:
+    .multi-box-detail
+        span(data-ng-bind="multiSelectItems")
+    .multi-box-icon
+        i.fa.fa-sort-desc
+div.shadow-div( data-ng-hide="show")
+    .form-group.has-feedback
+        input.form-control(type="text" placeholder="search" data-ng-model="term" data-ng-change="query()")
+        span.glyphicon.glyphicon-search.form-control-feedback(data-ng-show="term === ''||!term")
+        span.glyphicon.glyphicon-remove-circle.search-box-icon(data-ng-show="term && term !== ''" data-ng-click="cancelSearch()")
+    ul.list-unstyled
+        li.ta-list-header(data-ng-show="selectedItems && selectedItems.length > 0") Selected Items:
+        ta-drop-down-item(item ="t" data-ng-repeat = "t in selectedItems")
+            span(data-ng-bind="t[itemName]")
+            i.pull-right.fa.fa-2x.fa-check.create-color
+        li.ta-list-header(data-ng-show="defaultFlag") Suggested List:
+        ta-drop-down-item(item = "i" data-ng-repeat = "i in taDefaultItems" data-ng-show="defaultFlag")
+            span(data-ng-bind="i[itemName]")
+        li.ta-list-header(data-ng-hide="defaultFlag") Search Results: {{taItems.length}}
+        ta-drop-down-item(item = "i" data-ng-repeat = "i in taItems" data-ng-hide="defaultFlag")
+            span(data-ng-bind="i[itemName]")
+            i.pull-right.fa.fa-2x.fa-check.create-color(data-ng-show="i.selected")
