@@ -1,0 +1,318 @@
+body {
+  padding-top: 75px; }
+
+.toast-top-right {
+  top: 75px; }
+
+.navbar-blue {
+  background-color: #205081; }
+
+.navbar-nav li a {
+  color: white; }
+  .navbar-nav li a:hover {
+    background-color: #296ca3; }
+  .navbar-nav li a:focus {
+    background-color: #296ca3; }
+
+.checkbox-color {
+  color: #4dfba1; }
+
+ul.dropdown-menu li {
+  width: 250px;
+  margin-top: 2px;
+  margin-bottom: 2px; }
+  ul.dropdown-menu li:hover {
+    background-color: blue;
+    color: white; }
+  ul.dropdown-menu li a {
+    color: black; }
+    ul.dropdown-menu li a:hover {
+      background-color: #205081;
+      color: white; }
+    ul.dropdown-menu li a:focus {
+      background-color: #205081;
+      color: white; }
+
+ul.dropdown-menu div {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 12px;
+  font-weight: bold; }
+
+ul.dropdown-menu span {
+  padding-left: 15px; }
+
+.white-font {
+  color: whitesmoke; }
+
+.nav .open .dropdown-toggle {
+  background-color: #296ca3; }
+  .nav .open .dropdown-toggle:hover {
+    background-color: #296ca3; }
+  .nav .open .dropdown-toggle:focus {
+    background-color: #296ca3; }
+
+body {
+  padding-top: 65px; }
+
+.input-no-border {
+  border: none; }
+
+.border-box {
+  border: 1px solid #CCCCCC;
+  padding: 5px 1px 5px 1px;
+  background-color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+
+.shadow-div {
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+  .shadow-div li.ta-list-item {
+    padding: 5px 5px 5px 5px;
+    width: 400px; }
+    .shadow-div li.ta-list-item:hover {
+      background-color: #337ab7;
+      color: white; }
+  .shadow-div li.ta-list-header {
+    padding: 5px 15px 5px 15px;
+    font-weight: bold; }
+
+.create-color {
+  color: #1790fb; }
+
+.button-color {
+  color: #4dfba1; }
+
+li.listBox {
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca; }
+
+.item-box {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1px 3px;
+  margin-right: 2px;
+  margin-bottom: 3px;
+  color: #333;
+  background-color: #f6f6f6; }
+
+ul.list-unstyled li a:hover {
+  background-color: #000066; }
+
+.incident-padding {
+  padding-left: 25px;
+  margin-left: 10px;
+  width: 98%; }
+
+.side-padding {
+  padding-left: 10px;
+  margin-left: 5px;
+  width: 98%; }
+
+.line-desc h1 {
+  overflow: hidden;
+  text-align: center;
+  font-size: 1em; }
+
+.line-desc h1:before,
+.line-desc h1:after {
+  border-top: 1px solid #e3e3e3;
+  content: "";
+  display: inline-block;
+  height: .1em;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+  margin-bottom: .15em; }
+
+.line-desc h1:before {
+  right: 0.5em;
+  margin-left: -50%; }
+
+.line-desc h1:after {
+  left: 0.5em;
+  margin-right: -50%; }
+
+.border-left {
+  border-left: thin solid #e3e3e3; }
+
+.text-content {
+  min-height: 150px;
+  border: 1px solid #ccc; }
+
+.form-content {
+  border: 1px solid #ccc; }
+
+.my-drop-zone {
+  border: dotted 3px #ccc;
+  margin: 5px 5px;
+  padding: 5px 5px; }
+
+.square {
+  width: 250px;
+  height: 250px;
+  background-color: blue; }
+
+.ticket-header {
+  position: fixed;
+  top: 40px;
+  left: 0px;
+  width: 100%;
+  opacity: 1;
+  z-index: 5; }
+
+.ticket-header2 {
+  position: fixed;
+  top: 40px;
+  left: 30%;
+  width: 70%;
+  opacity: 1;
+  z-index: 5; }
+
+.main-content {
+  padding-top: 10px; }
+
+.ticket-footer {
+  padding-bottom: 200px; }
+
+.simple-box {
+  border: 1px solid dodgerblue;
+  padding: 5px 5px;
+  margin: 5px 5px;
+  border-radius: 5px;
+  color: black;
+  text-decoration: none; }
+  .simple-box:hover {
+    border-color: #4dfba1;
+    background-color: #cbffc8; }
+
+.edit-box {
+  padding: 2px 2px;
+  display: flex;
+  flex-wrap: wrap; }
+  .edit-box:hover {
+    border: 1px solid #296ca3;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px; }
+  .edit-box .main {
+    display: flex;
+    width: 93%; }
+    .edit-box .main span {
+      padding-left: 15px; }
+  .edit-box .pencil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7%;
+    background-color: #ececec;
+    border-left: 1px solid #ccc;
+    color: #2d2d2d; }
+
+.border-box {
+  padding: 1px 1px;
+  border: 1px solid #ccc;
+  min-height: 40px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px; }
+
+.form-group-2 {
+  margin-bottom: 2px;
+  margin-top: 2px;
+  display: table; }
+
+.incident-main {
+  width: 70%;
+  position: relative;
+  display: inline-block;
+  float: left; }
+
+.incident-side {
+  width: 30%;
+  position: relative;
+  display: inline-block;
+  float: left; }
+
+.padding-sm {
+  padding: 2px 2px; }
+
+.margin-sm {
+  margin: 4px 4px; }
+
+.round-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  color: white;
+  background-color: #ccc; }
+
+.comment-box {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 10px 10px 10px;
+  margin: 0 10px 0 10px; }
+  .comment-box:hover {
+    border: 1px solid deepskyblue;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px; }
+  .comment-box .small-text {
+    font-size: 10px;
+    color: #878787; }
+
+.margin-top {
+  margin-top: 10px; }
+
+.small-font {
+  font-size: small; }
+
+.no-padding {
+  padding: 0 0; }
+
+.incident-list-container .incident-list-side-bar {
+  position: fixed;
+  left: 0;
+  width: 30%; }
+
+.incident-list-container .incident-list-main {
+  position: relative;
+  width: 70%;
+  left: 30%; }
+
+.search-box-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center; }
+
+.multi-box {
+  float: left;
+  width: 100%;
+  padding: 5px 5px; }
+  .multi-box .multi-box-header {
+    float: left;
+    width: 60%; }
+  .multi-box .multi-box-detail {
+    float: left;
+    width: 35%; }
+  .multi-box .multi-box-icon {
+    float: left;
+    width: 5%; }
+  .multi-box:hover {
+    border: 1px solid #ccc;
+    border-radius: 1px; }
