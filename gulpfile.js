@@ -29,9 +29,9 @@ gulp.task('css-minify', function () {
 });
 
 function prepareTemplates() {
-    return gulp.src('angular-ta-multi-select/template/**/*.html')
+    return gulp.src('ng-multi-select/template/**/*.html')
         //.pipe(minify and preprocess the template html here)
-        .pipe(angularTemplateCache({ module:'angular-ta-multi-select'}));
+        .pipe(angularTemplateCache({ module:'ng-multi-select'}));
 }
 gulp.task('clean', function () {
   return gulp.src(config.buildFolder, {read: false})

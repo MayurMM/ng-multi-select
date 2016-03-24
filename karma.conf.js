@@ -6,8 +6,8 @@ module.exports = function (config) {
     files: [
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'angular-ta-multi-select/**/*.module.js',
-      'angular-ta-multi-select/**/*.js'
+      'ng-multi-select/**/*.module.js',
+      'ng-multi-select/**/*.js'
     ],
 
     autoWatch: true,

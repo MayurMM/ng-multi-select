@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angular-ta-multi-select').directive('taDropDownGroup',function(){
+angular.module('ng-multi-select').directive('taDropDownGroup',function(){
   return{
     controller:function(){
       var vm = this;
@@ -22,7 +22,7 @@ angular.module('angular-ta-multi-select').directive('taDropDownGroup',function()
   }
 
 });
-angular.module('angular-ta-multi-select').directive('taDropDown',function($timeout,$document){
+angular.module('ng-multi-select').directive('taDropDown',function($timeout,$document){
   return{
     transclude: true,
     require:['?^taDropDownGroup','taDropDown'],
@@ -312,7 +312,7 @@ angular.module('angular-ta-multi-select').directive('taDropDown',function($timeo
 
   }
 });
-angular.module('angular-ta-multi-select').directive('taDropDownItem',function($parse){
+angular.module('ng-multi-select').directive('taDropDownItem',function($parse){
   return {
     replace: true,
     require: '^taDropDown',

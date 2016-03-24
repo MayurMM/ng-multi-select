@@ -1,5 +1,5 @@
 'use strict';
 
 angular
-  .module('angular-ta-multi-select', [])
+  .module('ng-multi-select', [])
   .value('version', '0.1');
