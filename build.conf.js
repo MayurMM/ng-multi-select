@@ -3,12 +3,12 @@
  */
 module.exports = {
 
-  srcJs: ['angular-multi-select/**/*.module.js', 'angular-multi-select/**/*.js', '!angular-multi-select/**/*_test.js'],
-  srcJade:'angular-multi-select/template',
-  srcSass:'angular-multi-select/sass',
-  tests: 'angular-multi-select/**/*_test.js',
+  srcJs: ['angular-ta-multi-select/**/*.module.js', 'angular-ta-multi-select/**/*.js', '!angular-ta-multi-select/**/*_test.js'],
+  srcJade:'angular-ta-multi-select/template',
+  srcSass:'angular-ta-multi-select/sass',
+  tests: 'angular-ta-multi-select/**/*_test.js',
   buildFolder: 'dist',
-  buildJsFilename: 'angular-multi-select.js',
+  buildJsFilename: 'angular-ta-multi-select.js',
   banner: '/*!\n' +
     ' * See LICENSE in this repository for license information\n' +
     ' */\n',
