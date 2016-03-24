@@ -26,7 +26,7 @@ angular.module('angular-multi-select').directive('taDropDown',function($timeout,
   return{
     transclude: true,
     require:['?^taDropDownGroup','taDropDown'],
-    templateUrl: 'partials/directive/typeahead/template/taDropDown',
+    templateUrl: 'taDropDown.html',
     scope: {
       search: '&',
       select: '&',
@@ -202,6 +202,9 @@ angular.module('angular-multi-select').directive('taDropDown',function($timeout,
         if(groupController){
           groupController.closeOthers(scope);
         }
+        else{
+          scope.isOpen = true;
+        }
         scope.$apply(function(){
           controller.showTooltip();
         });
@@ -314,7 +317,7 @@ angular.module('angular-multi-select').directive('taDropDownItem',function($pars
     replace: true,
     require: '^taDropDown',
     transclude: true,
-    templateUrl:'partials/directive/typeahead/template/taDropDownItem',
+    templateUrl:'taDropDownItem.html',
     link: function(scope,element,attr,typeAheadCtrl){
       var item = scope.$eval(attr.item);
       scope.$on('$destroy',function(){
