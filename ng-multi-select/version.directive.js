@@ -189,6 +189,9 @@ angular.module('ng-multi-select').directive('taDropDown',function($templateCache
       if(groupController){
         groupController.addGroup(scope);
       }
+      else{
+        scope.isOpen = true;
+      }
       var controller = ctrl[1];
       var $input = element.find('.multi-box');
       //var $tooltip = element.find('.fa-sort-desc');
