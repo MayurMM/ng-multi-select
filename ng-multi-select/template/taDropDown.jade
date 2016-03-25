@@ -12,13 +12,13 @@ div.shadow-div( data-ng-hide="show")
         span.glyphicon.glyphicon-remove-circle.search-box-icon(data-ng-show="term && term !== ''" data-ng-click="cancelSearch()")
     ul.list-unstyled
         li.ta-list-header(data-ng-show="selectedItems && selectedItems.length > 0") Selected Items:
-        ta-drop-down-item(item ="t" data-ng-repeat = "t in selectedItems")
-            span(data-ng-bind="t[itemName]")
+        li.ta-list-item(item ="i" data-ng-repeat = "i in selectedItems" data-ng-click="vm.select(i)")
+            span(data-ng-bind="i[itemName]")
             i.pull-right.fa.fa-2x.fa-check.create-color
         li.ta-list-header(data-ng-show="defaultFlag") Suggested List:
-        ta-drop-down-item(item = "i" data-ng-repeat = "i in taDefaultItems" data-ng-show="defaultFlag")
+        li.ta-list-item(item = "i" data-ng-repeat = "i in taDefaultItems" data-ng-show="defaultFlag" data-ng-click="vm.select(i)")
             span(data-ng-bind="i[itemName]")
         li.ta-list-header(data-ng-hide="defaultFlag") Search Results: {{taItems.length}}
-        ta-drop-down-item(item = "i" data-ng-repeat = "i in taItems" data-ng-hide="defaultFlag")
+        li.ta-list-item(item = "i" data-ng-repeat = "i in taItems" data-ng-hide="defaultFlag" data-ng-click="vm.select(i)")
             span(data-ng-bind="i[itemName]")
             i.pull-right.fa.fa-2x.fa-check.create-color(data-ng-show="i.selected")

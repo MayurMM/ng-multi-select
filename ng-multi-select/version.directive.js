@@ -22,11 +22,22 @@ angular.module('ng-multi-select').directive('taDropDownGroup',function(){
   }
 
 });
-angular.module('ng-multi-select').directive('taDropDown',function($timeout,$document){
+angular.module('ng-multi-select').directive('taDropDown',function($templateCache,$timeout,$document){
+
+
+  var processTemplate = function(taItemTemplate){
+    var itemTemplate = taItemTemplate? '<div ng-include="\''+taItemTemplate+'\'"></div>':'<span data-ng-bind=\"i[itemName]\"></span>';
+
+    var mainTemplate = "<div class=\"multi-box\"><div class=\"multi-box-header\"><label class=\"control-label\">{{taLabel}}:</label></div><div class=\"multi-box-detail\"><span data-ng-bind=\"multiSelectItems\"></span></div><div class=\"multi-box-icon\"><i class=\"fa fa-sort-desc\"></i></div></div><div data-ng-hide=\"show\" class=\"shadow-div\"><div class=\"form-group has-feedback\"><input type=\"text\" placeholder=\"search\" data-ng-model=\"term\" data-ng-change=\"query()\" class=\"form-control\"/><span data-ng-show=\"term === \'\'||!term\" class=\"glyphicon glyphicon-search form-control-feedback\"></span><span data-ng-show=\"term &amp;&amp; term !== \'\'\" data-ng-click=\"cancelSearch()\" class=\"glyphicon glyphicon-remove-circle search-box-icon\"></span></div><ul class=\"list-unstyled\"><li data-ng-show=\"selectedItems &amp;&amp; selectedItems.length &gt; 0\" class=\"ta-list-header\">Selected Items:</li><li item=\"i\" data-ng-repeat=\"i in selectedItems\" data-ng-click=\"vm.select(i)\" class=\"ta-list-item\">"+itemTemplate+"<i class=\"pull-right fa fa-2x fa-check create-color\"></i></li><li data-ng-show=\"defaultFlag\" class=\"ta-list-header\">Suggested List:</li><li item=\"i\" data-ng-repeat=\"i in taDefaultItems\" data-ng-show=\"defaultFlag\" data-ng-click=\"vm.select(i)\" class=\"ta-list-item\">"+itemTemplate+"</li><li data-ng-hide=\"defaultFlag\" class=\"ta-list-header\">Search Results: {{taItems.length}}</li><li item=\"i\" data-ng-repeat=\"i in taItems\" data-ng-hide=\"defaultFlag\" data-ng-click=\"vm.select(i)\" class=\"ta-list-item\">"+itemTemplate+"<i data-ng-show=\"i.selected\" class=\"pull-right fa fa-2x fa-check create-color\"></i></li></ul></div>";
+    return mainTemplate;
+  };
+
   return{
     transclude: true,
     require:['?^taDropDownGroup','taDropDown'],
-    templateUrl: 'taDropDown.html',
+    template: function(elem,attrs){
+      return processTemplate(attrs.taItemTemplate);
+    },
     scope: {
       search: '&',
       select: '&',
@@ -57,7 +68,6 @@ angular.module('ng-multi-select').directive('taDropDown',function($timeout,$docu
         $scope.defaultFlag = true;
       }
       $scope.showDefaultItems = function(){
-        console.log($scope.taItems);
         if($scope.taItems){
           return $scope.taItems.length === 0;
         }
@@ -105,8 +115,6 @@ angular.module('ng-multi-select').directive('taDropDown',function($timeout,$docu
             var i = _.findIndex($scope.taDefaultItems,function(d,i){
               return d[$scope.itemName] === item[$scope.itemName];
             })
-            //var i = $scope.taDefaultItems.indexOf(item);
-            console.log(i);
             $scope.taDefaultItems.splice(i,1);
           }
         }
@@ -160,7 +168,6 @@ angular.module('ng-multi-select').directive('taDropDown',function($timeout,$docu
         $scope.hide = false;
         if($scope.term){
           if(vm.remoteSearch){
-            console.log($scope.search);
             $scope.search({term:$scope.term});
           }
           else{
@@ -176,6 +183,7 @@ angular.module('ng-multi-select').directive('taDropDown',function($timeout,$docu
 
 
     },
+    controllerAs:'vm',
     link: function(scope,element,attr,ctrl){
       var groupController = ctrl[0];
       if(groupController){
@@ -183,9 +191,10 @@ angular.module('ng-multi-select').directive('taDropDown',function($timeout,$docu
       }
       var controller = ctrl[1];
       var $input = element.find('.multi-box');
-      var $tooltip = element.find('.fa-sort-desc');
+      //var $tooltip = element.find('.fa-sort-desc');
       var $list = element.find('> .shadow-div');
       var w= element.parent()[0].offsetWidth;
+
       w = w>=450?w:400;
 
       controller.remoteSearch = attr.search? true: false;
@@ -198,12 +207,8 @@ angular.module('ng-multi-select').directive('taDropDown',function($timeout,$docu
       });
 
       $input.bind('click',function(){
-        console.log('clicked');
         if(groupController){
           groupController.closeOthers(scope);
-        }
-        else{
-          scope.isOpen = true;
         }
         scope.$apply(function(){
           controller.showTooltip();
@@ -310,22 +315,5 @@ angular.module('ng-multi-select').directive('taDropDown',function($timeout,$docu
       });
     }
 
-  }
-});
-angular.module('ng-multi-select').directive('taDropDownItem',function($parse){
-  return {
-    replace: true,
-    require: '^taDropDown',
-    transclude: true,
-    templateUrl:'taDropDownItem.html',
-    link: function(scope,element,attr,typeAheadCtrl){
-      var item = scope.$eval(attr.item);
-      scope.$on('$destroy',function(){
-      });
-      element.bind('click',function(e){
-        scope.$apply(function(){typeAheadCtrl.select(item)});
-      });
-
-    }
   }
 });

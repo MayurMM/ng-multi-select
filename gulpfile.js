@@ -51,7 +51,7 @@ gulp.task('scripts', function () {
 
 
     // package
-      .pipe(addStream.obj(prepareTemplates()))
+     // .pipe(addStream.obj(prepareTemplates()))
       .pipe(plugins.concat(config.buildJsFilename))
       .pipe(plugins.header(config.closureStart))
       .pipe(plugins.footer(config.closureEnd))
@@ -102,7 +102,7 @@ gulp.task('watch', function () {
 
 gulp.task('ci', function () {
   ciMode = true;
-  return gulp.start(['clean','sass','templates','css-minify','scripts']);
+  return gulp.start(['clean','sass','css-minify','scripts']);
 });
 
 gulp.task('default', ['scripts']);
