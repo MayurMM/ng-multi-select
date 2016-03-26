@@ -1,0 +1,43 @@
+.shadow-div {
+  box-shadow: 3px 3px 5px 6px #ccc;
+  border-radius: 5px; }
+  .shadow-div li.ta-list-item {
+    padding: 5px 5px 5px 5px;
+    width: 400px; }
+    .shadow-div li.ta-list-item:hover {
+      background-color: #337ab7;
+      color: white; }
+  .shadow-div li.ta-list-header {
+    padding: 5px 15px 5px 15px;
+    font-weight: bold; }
+
+.create-color {
+  color: #1790fb; }
+
+.search-box-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center; }
+
+.multi-box {
+  float: left;
+  width: 100%;
+  padding: 5px 5px; }
+  .multi-box .multi-box-header {
+    float: left;
+    width: 60%; }
+  .multi-box .multi-box-detail {
+    float: left;
+    width: 35%; }
+  .multi-box .multi-box-icon {
+    float: left;
+    width: 5%; }
+  .multi-box:hover {
+    border: 1px solid #ccc;
+    border-radius: 1px; }

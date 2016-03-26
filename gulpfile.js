@@ -13,7 +13,8 @@ var path = require('path'),
     concat = require('gulp-concat'),
     angularTemplateCache = require('gulp-angular-templatecache'),
     autoprefixer = require('gulp-autoprefixer'),
-    addStream = require('add-stream');
+    addStream = require('add-stream'),
+    ngAnnotate = require('gulp-ng-annotate');
 
 var ciMode = false;
 
@@ -62,6 +63,7 @@ gulp.task('scripts', function () {
       .pipe(plugins.header(config.closureStart))
       .pipe(plugins.footer(config.closureEnd))
       .pipe(plugins.header(config.banner))
+      .pipe(ngAnnotate())
       .pipe(gulp.dest(config.buildFolder))
       .pipe(plugins.filesize())
 
