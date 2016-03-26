@@ -27,12 +27,12 @@ gulp.task('css-minify', function () {
         .pipe(gulp.dest(config.buildFolder))
     ;
 });
-
-function prepareTemplates() {
-    return gulp.src('ng-multi-select/template/**/*.html')
-        //.pipe(minify and preprocess the template html here)
-        .pipe(angularTemplateCache({ module:'ng-multi-select'}));
-}
+//
+//function prepareTemplates() {
+//    return gulp.src('ng-multi-select/template/**/*.html')
+//        //.pipe(minify and preprocess the template html here)
+//        .pipe(angularTemplateCache({ module:'ng-multi-select'}));
+//}
 gulp.task('clean', function () {
   return gulp.src(config.buildFolder, {read: false})
       .pipe(plugins.clean());
@@ -43,7 +43,13 @@ var sass = require('gulp-sass');
 gulp.task('sass', function () {
     return gulp.src(config.srcSass+'//*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(config.buildFolder));
+        .pipe(autoprefixer())
+        .pipe(gulp.dest(config.buildFolder))
+        .pipe(cssMinify())
+        //.pipe(concat('style.min.css'))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
+        .pipe(rename({ suffix: '.min'}))
+        .pipe(gulp.dest(config.buildFolder))
 });
 gulp.task('scripts', function () {
 
@@ -102,7 +108,7 @@ gulp.task('watch', function () {
 
 gulp.task('ci', function () {
   ciMode = true;
-  return gulp.start(['clean','sass','css-minify','scripts']);
+  return gulp.start(['clean','scripts','sass']);
 });
 
 gulp.task('default', ['scripts']);
