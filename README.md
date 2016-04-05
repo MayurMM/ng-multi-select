@@ -1,30 +1,6 @@
-        Heading
-        =======
+### HEAD
 
-        Sub-heading
-        -----------
+        ### 1.0.0 (6th Oct 2014)
 
-        ### Another deeper heading
-
-        Paragraphs are separated
-        by a blank line.
-
-        Two spaces at the end of a line leave a
-        line break.
-
-        Text attributes _italic_,
-        **bold**, `monospace`.
-
-        Bullet list:
-
-        * apples
-        * oranges
-        * pears
-
-        Numbered list:
-
-        1. apples
-        2. oranges
-        3. pears
-
-        A [link](http://example.com).
+        * Added gulp, bower, karma & wired up post processing for npm install
+        * Added component example from angular seed project
