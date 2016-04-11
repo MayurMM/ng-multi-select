@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 angular-multiselect
         ===================
 
@@ -126,3 +127,8 @@ angular-multiselect
         | multiSelectClear | name | Clear a multi selects options, referenced by the name attribute. |
         | multiSelectRefreshAll | - | Refresh all multi select options on the page. Handy if there is more than one. This listener should be called if the model is updated outside the directive. |
         | multiSelectRefresh | name, options | Refresh a multi selects options, referenced by the name attribute. This listener should be called if the model is updated outside the directive. |
+=======
+# ng-multi-select
+multil select item
+# This is multi select
+>>>>>>> 0652a08491adeaac45b3f5d259418099b23000d7
