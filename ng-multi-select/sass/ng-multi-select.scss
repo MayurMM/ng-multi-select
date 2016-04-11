@@ -3,7 +3,7 @@
     border-radius: 5px;
     li.ta-list-item{
         padding: 5px 5px 5px 5px;
-        width: 400px;
+        min-width: 400px;
         //border-bottom: 1px solid #ececec;
         &:hover{
             background-color:#337ab7;

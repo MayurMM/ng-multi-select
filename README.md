@@ -1,4 +1,4 @@
-angular-multiselect
+ng-multi-select
 ===================
 
 A multi select drop down list directive for AngularJS. This directive takes an array of value/label objects and formats them as a drop down list where multiple options can be selected. It also has shortcut filters to select all and select none, and an optional text box to enter new values. The element returns an array of selected objects to the specified model.
