@@ -19,17 +19,13 @@ $ bower install ng-multi-select
 
 ### Manual
 ```bash
-1. $ git clone https://github.com/shalotelli/ng-multi-select.git
-2. <script src="path/to/shalotelli-angular-multiselect/multiselect.js">
-3. <link rel="stylesheet" href="path/to/shalotelli-angular-multiselect/styles/multi-select.css">
-4. Add module shalotelli-angular-multiselect to dependencies list
+1. $ git clone https://github.com/MayurMM/ng-multi-select.git
+2. <script src="path/to/ng-multi-select/dist/ng-multi-select.min.js">
+3. <link rel="stylesheet" href="path/to/ng-multi-select/dist/ng-multi-select.min.css">
+4. Add module ng-multi-select to dependencies list
 ```
 
 # Usage
-
-To use this directive, call the multi-select tag, including the model with the array of data objects, a reference to the output model and any display options (listed below).
-
-To prepopulate items, add them to model.
 
 ```html
 <ta-drop-down
