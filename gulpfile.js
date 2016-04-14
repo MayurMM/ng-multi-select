@@ -28,12 +28,12 @@ gulp.task('css-minify', function () {
         .pipe(gulp.dest(config.buildFolder))
     ;
 });
-//
-//function prepareTemplates() {
-//    return gulp.src('ng-multi-select/template/**/*.html')
-//        //.pipe(minify and preprocess the template html here)
-//        .pipe(angularTemplateCache({ module:'ng-multi-select'}));
-//}
+
+function prepareTemplates() {
+    return gulp.src('ng-multi-select/template/**/*.html')
+        //.pipe(minify and preprocess the template html here)
+        .pipe(angularTemplateCache({ module:'ng-multi-select'}));
+}
 gulp.task('clean', function () {
   return gulp.src(config.buildFolder, {read: false})
       .pipe(plugins.clean());
@@ -58,7 +58,7 @@ gulp.task('scripts', function () {
 
 
     // package
-     // .pipe(addStream.obj(prepareTemplates()))
+      .pipe(addStream.obj(prepareTemplates()))
       .pipe(plugins.concat(config.buildJsFilename))
       .pipe(plugins.header(config.closureStart))
       .pipe(plugins.footer(config.closureEnd))
