@@ -39,6 +39,10 @@ gulp.task('clean', function () {
       .pipe(plugins.clean());
 });
 
+gulp.task('clean2',function(){
+    return gulp.src(config.buildFolder2, {read: false})
+        .pipe(plugins.clean({force: true}));
+});
 var sass = require('gulp-sass');
 
 gulp.task('sass', function () {
@@ -51,6 +55,18 @@ gulp.task('sass', function () {
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
         .pipe(rename({ suffix: '.min'}))
         .pipe(gulp.dest(config.buildFolder))
+});
+
+gulp.task('sass2', function () {
+    return gulp.src(config.srcSass+'//*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer())
+        .pipe(gulp.dest(config.buildFolder2))
+        .pipe(cssMinify())
+        //.pipe(concat('style.min.css'))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
+        .pipe(rename({ suffix: '.min'}))
+        .pipe(gulp.dest(config.buildFolder2))
 });
 gulp.task('scripts', function () {
 
@@ -76,6 +92,29 @@ gulp.task('scripts', function () {
 
 });
 
+gulp.task('scripts2', function () {
+
+    return gulp.src(config.srcJs)
+
+
+        // package
+        .pipe(addStream.obj(prepareTemplates()))
+        .pipe(plugins.concat(config.buildJsFilename))
+        .pipe(plugins.header(config.closureStart))
+        .pipe(plugins.footer(config.closureEnd))
+        .pipe(plugins.header(config.banner))
+        .pipe(ngAnnotate())
+        .pipe(gulp.dest(config.buildFolder2))
+        .pipe(plugins.filesize())
+
+        // minify
+        .pipe(plugins.uglify())
+        .pipe(plugins.rename({ extname: '.min.js' }))
+        .pipe(gulp.dest(config.buildFolder2))
+        .pipe(plugins.filesize())
+        .on('error', plugins.util.log);
+
+});
 gulp.task('templates', function() {
   var YOUR_LOCALS = {};
   gulp.src(config.srcJade+'//*.jade')
@@ -113,4 +152,7 @@ gulp.task('ci', function () {
   return gulp.start(['clean','scripts','sass']);
 });
 
+gulp.task('build2',function(){
+    return gulp.start(['clean2','scripts2','sass2']);
+})
 gulp.task('default', ['scripts']);

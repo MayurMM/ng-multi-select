@@ -7,6 +7,7 @@ module.exports = {
   srcJade:'ng-multi-select/template',
   srcSass:'ng-multi-select/sass',
   tests: 'ng-multi-select/**/*_test.js',
+  buildFolder2:'../../demoApp/public/vendor/ng-multi-select/dist',
   buildFolder: 'dist',
   buildJsFilename: 'ng-multi-select.js',
   banner: '/*!\n' +
