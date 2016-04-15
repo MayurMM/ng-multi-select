@@ -257,6 +257,7 @@ angular
           });
           $document.click(function(){
             scope.$apply(function(){
+              if(controller.remoteSearch) { scope.taItems = [];}
               scope.term = "";
               scope.hide = true ;
             });
