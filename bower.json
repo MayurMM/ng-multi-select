@@ -5,6 +5,8 @@
   "homepage": "https://github.com/MayurMM/ng-multi-selct",
   "license": "MIT",
   "private": false,
+  "main": "./dist/ng-multi-select.js",
+  "ignore": ["ng-multi-select/*",".gitattributes",".gitignore","*.js"],
   "devDependencies": {
     "angular": "1.2.x",
     "angular-mocks": "~1.2.x"
