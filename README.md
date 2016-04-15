@@ -8,7 +8,7 @@ It also allows to create list of values dynamically. By default it will display 
 
 # Demo
 
-View the demo on Plunker: http://plnkr.co/edit/7LHuN1t5eHe9iNyTw7MV?p=preview
+View the demo on : http://ng.mmapp.us/ng-multi-select
 
 # Installation
 
