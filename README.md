@@ -27,14 +27,26 @@ $ bower install ng-multi-select
 
 # Usage
 
+### local data and selection of array object implementation
 ```html
+<ta-drop-down
+        ta-items="items"
+        ta-name="itemName"
+        selected-items="selected"
+></ta-drop-down>
+```
+```html
+
+### remote search via api implentation
+this configuration allow you to searchitem remotely based on search term and results will be returns to items object. you can also define custom via ng-temmplate and it will update list item based on template.
 <ta-drop-down
         ta-items="values"
         ta-label="Item"
         ta-default-items="values"
         ta-name="itemName"
+        ta-item-template="templateName"
         search = "searchItem(term)"
-        select-items="selected"
+        selected-items="selected"
 >
-</multi-select>
-```
+</ta-drop-down>
+``` html

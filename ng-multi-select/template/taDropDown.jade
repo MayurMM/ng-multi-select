@@ -10,22 +10,23 @@ div.shadow-div( data-ng-hide="show")
         span.glyphicon.glyphicon-search.form-control-feedback(data-ng-show="term === ''||!term")
         span.glyphicon.glyphicon-remove-circle.search-box-icon(data-ng-show="term && term !== ''" data-ng-click="cancelSearch()")
     ul.list-unstyled
-        li.ta-list-header(data-ng-show="selectedItems && selectedItems.length > 0") Selected Items:
-        li.ta-list-item(item ="i" data-ng-repeat = "i in selectedItems" data-ng-click="vm.select(i)")
-            .row
-                .col-md-10
-                    span(data-ng-bind="i[itemName]")
-                .col-md-2
-                    i.pull-right.glyphicon.glyphicon-ok.create-color
-        li.ta-list-header(data-ng-show="defaultFlag") Suggested List:
-        li.ta-list-item(item = "i" data-ng-repeat = "i in taDefaultItems" data-ng-show="defaultFlag" data-ng-click="vm.select(i)")
-            .row
-                .col-md-10
-                    span(data-ng-bind="i[itemName]")
-        li.ta-list-header(data-ng-hide="defaultFlag") Search Results: {{taItems.length}}
+
+        li.ta-list-header(data-ng-show="term") Search Results: {{taItems.length}}
         li.ta-list-item(item = "i" data-ng-repeat = "i in taItems" data-ng-hide="defaultFlag" data-ng-click="vm.select(i)")
             .row
                 .col-md-10
                     span(data-ng-bind="i[itemName]")
                 .col-md-2
-                    i.pull-right.glyphicon.glyphicon-ok.create-color(data-ng-show="i.selected")
+                    i.pull-right.glyphicon.glyphicon-ok.gi-2x.create-color(data-ng-show="i.selected")
+        li.ta-list-header(data-ng-show="!term && selectedItems && selectedItems.length > 0") Selected Items:
+        li.ta-list-item(item ="i" data-ng-repeat = "i in selectedItems" data-ng-click="vm.select(i)")
+            .row
+                .col-md-10
+                    span(data-ng-bind="i[itemName]")
+                .col-md-2
+                    i.pull-right.glyphicon.glyphicon-ok.gi-2x.create-color
+        li.ta-list-header(data-ng-show="defaultFlag") Suggested List:
+        li.ta-list-item(item = "i" data-ng-repeat = "i in taDefaultItems" data-ng-show="defaultFlag" data-ng-click="vm.select(i)")
+            .row
+                .col-md-10
+                    span(data-ng-bind="i[itemName]")
