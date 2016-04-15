@@ -42,6 +42,8 @@
     //flex-wrap: wrap;
     float:left;
     width:100%;
+    border: 1px solid #ccc;
+    border-radius:2px;
 
     .multi-box-header{
         float:left;
@@ -58,8 +60,8 @@
     }
     padding: 5px 5px;
     &:hover{
-        border: 1px solid #ccc;
-        border-radius: 1px;
+        border: 1px solid #1790fb;
+        border-radius: 2px;
     }
 }
 .gi-2x{font-size: 2em;}

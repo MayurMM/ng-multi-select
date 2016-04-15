@@ -247,6 +247,9 @@
           });
           $document.click(function(){
             scope.$apply(function(){
+              if(controller.remoteSearch) { scope.taItems = [];}
+              if(attr.taDefaultItems) scope.defaultFlag = true;
+              //scope.defaultFlag = true;
               scope.term = "";
               scope.hide = true ;
             });
