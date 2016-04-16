@@ -1,9 +1,8 @@
 .multi-box
-    .multi-box-header
-        label.control-label {{taLabel}}:
     .multi-box-detail
         span(data-ng-bind="multiSelectItems")
     .multi-box-icon
+        i.glyphicon.glyphicon-triangle-bottom
 div.shadow-div( data-ng-hide="show")
     .form-group.has-feedback
         input.form-control(type="text" placeholder="search" data-ng-model="term" data-ng-change="query()")

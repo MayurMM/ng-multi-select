@@ -35,12 +35,9 @@
   border: 1px solid #ccc;
   border-radius: 2px;
   padding: 5px 5px; }
-  .multi-box .multi-box-header {
-    float: left;
-    width: 60%; }
   .multi-box .multi-box-detail {
     float: left;
-    width: 35%; }
+    width: 95%; }
   .multi-box .multi-box-icon {
     float: left;
     width: 5%; }
