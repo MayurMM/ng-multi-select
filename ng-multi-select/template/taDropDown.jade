@@ -12,7 +12,7 @@ div.shadow-div( data-ng-hide="show")
     ul.list-unstyled
 
         li.ta-list-header(data-ng-show="term") Search Results: {{taItems.length}}
-        li.ta-list-item(item = "i" data-ng-repeat = "i in taItems" data-ng-hide="defaultFlag" data-ng-click="vm.select(i)")
+        li.ta-list-item(item = "i" data-ng-repeat = "i in taItems | filter:term " data-ng-hide="defaultFlag" data-ng-click="vm.select(i)")
             .row
                 .col-md-10
                     span(data-ng-bind="i[itemName]")
