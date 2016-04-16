@@ -18,7 +18,7 @@ div.shadow-div( data-ng-hide="show")
                     span(data-ng-bind="i[itemName]")
                 .col-md-2
                     i.pull-right.glyphicon.glyphicon-ok.gi-2x.create-color(data-ng-show="i.selected")
-        li.ta-list-header(data-ng-show="!term && selectedItems && selectedItems.length > 0") Selected Items:
+        li.ta-list-header(data-ng-show=" selectedItems && selectedItems.length > 0") Selected Items:
         li.ta-list-item(item ="i" data-ng-repeat = "i in selectedItems" data-ng-click="vm.select(i)")
             .row
                 .col-md-10
